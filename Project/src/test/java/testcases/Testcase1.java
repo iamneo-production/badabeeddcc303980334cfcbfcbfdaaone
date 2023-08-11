@@ -44,8 +44,6 @@ public class Testcase1 extends Base {
     ExtentReports reporter = Reporter.generateExtentReport();
     java.util.logging.Logger log =  LoggerHandler.getLogger();
     
-    
-    
     @Test(priority = 1, dataProvider="testData")
     public void Register(String amt) throws IOException {
         try {
@@ -84,81 +82,17 @@ public class Testcase1 extends Base {
 		return;
     }
 
-    // @Test(priority = 2)
-    // public void Valid_Login_TC() throws IOException {
-    //     try {
-    //         ExtentTest test = reporter.createTest("Basic log", "Execution for Login Function");
-    //         e = new EventHandler();
-    //         driver.get(prop.getProperty("url") + "/Login");
-    //         driver.findElement(By.name("username")).sendKeys("S@gmail.com");
-    //         log.info("User name sent");
-    //         driver.findElement(By.id("password")).sendKeys("P@ssword12");
-    //         log.info("Password Sent");
-    //         driver.findElement(By.id("submit")).click();
-    //         log.info("Submit Button clicked");
-
-    //     } 
-    //     catch (Exception ex) {
-    //         // Handle any exceptions here
-    //         log.info("Exception occurred: " + ex.getMessage());
-    //         Exception_Screenshot screenshotHandler = new Exception_Screenshot();
-    //         screenshotHandler.captureScreenshot(driver, "Login_Exception");
-    //         ex.printStackTrace();
-    //     }
-    // }
-//     @Test(priority=3, dataProvider="testData")
-//   public void WithdrawTest(String amt) throws IOException {
-// 	try {
-//         ExtentTest test = reporter.createTest("Withdraw Test", "Execution for withdraw operation");
-//         e = new EventHandler();
-//         driver.get(prop.getProperty("url") + "/login");
-//         // e.logger("Browser Navigated to the Login Page");
-//         driver.findElement(By.id("username")).sendKeys("S@gmail.com");
-//         log.info("User name sent");
-//         driver.findElement(By.id("password")).sendKeys("P@ssword12");
-//         log.info("Password Sent");
-//         driver.findElement(By.id("submit")).click();
-//         log.info("Submit Button clicked");
-//         driver.findElement(By.linkText("Withdraw")).click();
-//         log.info("Withdraw Button click");
-//         Select accType = new Select(driver.findElement(By.id("selectedAccount")));
-//         log.info("Account type has been Selected");
-//         accType.selectByVisibleText("Individual Checking (Standard Checking)");
-//         driver.findElement(By.id("amount")).sendKeys(amt);
-//         driver.findElement(By.xpath("//button[text()=' Submit']")).click();
-
-      
-//                 test.pass("Withdrawal completed successfully");
-//     }
-// catch(Exception ex){
-//     Exception_Screenshot screenshotHandler = new Exception_Screenshot();
-//     screenshotHandler.captureScreenshot(driver, "Vote_without_Login_Exception");
-// }
-
-// }
- @DataProvider(name = "testData")
-// public Object[][] readTestData() throws IOException {
-//     String excelFilePath = System.getProperty("user.dir") + "/src/test/java/resources/Testdata.xlsx";
-//     String sheetName = "Sheet1";
-//     int columnToRead = 2;
-
-//     FileInputStream fileInputStream = new FileInputStream(excelFilePath);
-//     Workbook workbook = WorkbookFactory.create(fileInputStream);
-//     Sheet sheet = workbook.getSheet(sheetName);
-
-//     int rowCount = sheet.getLastRowNum();
-//     int colCount = sheet.getRow(0).getLastCellNum();
-
-//     Object[][] data = new Object[rowCount][1];
-//     for (int i = 1; i <= rowCount; i++) {
-//         Row row = sheet.getRow(i);
-//         Cell cell = row.getCell(columnToRead, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
-//         data[i - 1][0] = cell.getStringCellValue();
-//     }
+    @DataProvider(name = "testData")
+public Object[][] readTestData() throws IOException {
+    
+    return null;
+    }
 
 
-//     return data;
-// }
+
+
+
+    
 
 @BeforeMethod
 public void beforeMethod() throws MalformedURLException {

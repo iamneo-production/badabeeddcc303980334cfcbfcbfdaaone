@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-11T09:39:00 UTC" name="Surefire suite" finished-at="2023-08-11T09:39:05 UTC" duration-ms="4865">
+  <suite started-at="2023-08-11T09:44:18 UTC" name="Surefire suite" finished-at="2023-08-11T09:44:18 UTC" duration-ms="85">
     <groups>
     </groups>
-    <test started-at="2023-08-11T09:39:00 UTC" name="Surefire test" finished-at="2023-08-11T09:39:05 UTC" duration-ms="4865">
+    <test started-at="2023-08-11T09:44:18 UTC" name="Surefire test" finished-at="2023-08-11T09:44:18 UTC" duration-ms="85">
       <class name="testcases.Testcase1">
-        <test-method signature="Register(java.lang.String)[pri:1, instance:testcases.Testcase1@2ddc9a9f]" started-at="2023-08-11T09:39:04 UTC" name="Register" data-provider="testData" finished-at="2023-08-11T09:39:04 UTC" duration-ms="0" status="FAIL">
+        <test-method signature="Register(java.lang.String)[pri:1, instance:testcases.Testcase1@298a5e20]" started-at="2023-08-11T09:44:18 UTC" name="Register" data-provider="testData" finished-at="2023-08-11T09:44:18 UTC" duration-ms="0" status="FAIL">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
-Data Provider public void testcases.Testcase1.beforeMethod() throws java.net.MalformedURLException returned a null value]]>
+Data Provider public java.lang.Object[][] testcases.Testcase1.readTestData() throws java.io.IOException returned a null value]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
-Data Provider public void testcases.Testcase1.beforeMethod() throws java.net.MalformedURLException returned a null value
+Data Provider public java.lang.Object[][] testcases.Testcase1.readTestData() throws java.io.IOException returned a null value
 at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:159)
 at org.testng.internal.Parameters.handleParameters(Parameters.java:803)
 at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
