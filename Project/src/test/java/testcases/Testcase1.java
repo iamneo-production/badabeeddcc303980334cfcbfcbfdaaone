@@ -44,6 +44,8 @@ public class Testcase1 extends Base {
     ExtentReports reporter = Reporter.generateExtentReport();
     java.util.logging.Logger log =  LoggerHandler.getLogger();
     
+    
+    
     @Test(priority = 1, dataProvider="testData")
     public void Register(String amt) throws IOException {
         try {
@@ -71,28 +73,37 @@ public class Testcase1 extends Base {
 	    driver.findElement(By.xpath("//button[text()=' Submit']")).click();
         
         } catch (Exception ex) {
-            Exception_Screenshot screenshotHandler = new Exception_Screenshot();
-            screenshotHandler.captureScreenshot(driver, "Registeration_Exception");
-            log.info("Exception occurred: " + ex.getMessage());
+        
             
             ex.printStackTrace();
         }
-        WebDriverListener listener = new EventHandler();
-		driver = new EventFiringDecorator<>(listener).decorate(driver);
-		return;
+       
     }
 
-    @DataProvider(name = "testData")
+
+@DataProvider(name = "testData")
 public Object[][] readTestData() throws IOException {
-    
-    return null;
+    String excelFilePath = System.getProperty("user.dir") + "/src/test/java/resources/Testdata.xlsx";
+    String sheetName = "Sheet1";
+    int columnToRead = 2;
+
+    FileInputStream fileInputStream = new FileInputStream(excelFilePath);
+    Workbook workbook = WorkbookFactory.create(fileInputStream);
+    Sheet sheet = workbook.getSheet(sheetName);
+
+    int rowCount = sheet.getLastRowNum();
+    int colCount = sheet.getRow(0).getLastCellNum();
+
+    Object[][] data = new Object[rowCount][1];
+    for (int i = 1; i <= rowCount; i++) {
+        Row row = sheet.getRow(i);
+        Cell cell = row.getCell(columnToRead, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+        data[i - 1][0] = cell.getStringCellValue();
     }
 
 
-
-
-
-    
+    return data;
+}
 
 @BeforeMethod
 public void beforeMethod() throws MalformedURLException {
