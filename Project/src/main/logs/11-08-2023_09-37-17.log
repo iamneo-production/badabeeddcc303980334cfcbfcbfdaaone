@@ -1,0 +1,14 @@
+Aug 11, 2023 9:37:25 AM testcases.Testcase1 Register
+INFO: Browser Launched
+Aug 11, 2023 9:37:26 AM testcases.Testcase1 Register
+INFO: Mail ID Sent
+Aug 11, 2023 9:37:26 AM testcases.Testcase1 Register
+INFO: Password Sent
+Aug 11, 2023 9:37:28 AM testcases.Testcase1 Register
+INFO: Submit Button clicked
+Aug 11, 2023 9:37:30 AM testcases.Testcase1 Register
+INFO: Account Type has been selected
+Aug 11, 2023 9:37:31 AM testcases.Testcase1 Register
+INFO: Amount has been sent
+Aug 11, 2023 9:37:32 AM testcases.Testcase1 afterMethod
+INFO: Browser closed
